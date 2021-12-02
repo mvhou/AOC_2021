@@ -12,12 +12,10 @@ input.forEach((x) => {
   if (x[0] == 'forward') {
     subPos.horizontal += x[1];
     subPos.depth += subPos.aim * x[1];
-  }
-  else if (x[0] == 'up') {
+  } else if (x[0] == 'up') {
     // subPos.depth -= x[1];
     subPos.aim -= x[1];
-  }
-  else if (x[0] == 'down') {
+  } else if (x[0] == 'down') {
     // subPos.depth += x[1];
     subPos.aim += x[1];
   }
