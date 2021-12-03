@@ -17,10 +17,25 @@ const reader = () => {
         return (fs.readFileSync(`${day}/input.txt`).toString().split(str));
     }
 
+    const getTestInput = (day) => {
+        return (fs.readFileSync(`${day}/test.txt`).toString());
+    }
+
+    const getTestLines = (day) => {
+        return (fs.readFileSync(`${day}/test.txt`).toString().split('\n'));
+    }
+
+    const getTestLinesBy = (day, str) => {
+        return (fs.readFileSync(`${day}/test.txt`).toString().split(str));
+    }
+
     return {
         getInput,
         getLines,
-        getLinesBy
+        getLinesBy,
+        getTestInput,
+        getTestLines,
+        getTestLinesBy
     };
 }
 
