@@ -4,7 +4,8 @@
   "description": "Advent of Code 2021",
   "main": "index.js",
   "scripts": {
-    "test": "aaploltest"
+    "test": "aaploltest",
+    "d03": "node d03/d03.js"
   },
   "author": "mvhou",
   "license": "ISC",

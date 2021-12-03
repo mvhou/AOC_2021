@@ -5,16 +5,16 @@ const reader = () => {
 
     const fs = require('fs')
 
-    const getInput = (file) => {
-        return (fs.readFileSync(file).toString());
+    const getInput = (day) => {
+        return (fs.readFileSync(`${day}/input.txt`).toString());
     }
 
-    const getLines = (file) => {
-        return (fs.readFileSync(file).toString().split('\n'));
+    const getLines = (day) => {
+        return (fs.readFileSync(`${day}/input.txt`).toString().split('\n'));
     }
 
-    const getLinesBy = (file, str) => {
-        return (fs.readFileSync(file).toString().split(str));
+    const getLinesBy = (day, str) => {
+        return (fs.readFileSync(`${day}/input.txt`).toString().split(str));
     }
 
     return {
