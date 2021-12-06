@@ -6,9 +6,10 @@ let days = Array(9).fill(0);
 input.forEach(fish => days[fish]++)
 
 for (let time = 0; time < 256; time++) {
-    let newBorn = days[0];
+    let newBorn = days[0]
     days = days.slice(1).concat(newBorn);
     days[6] += newBorn;
+    if (time == 79) console.log(days.reduce((acc, x) => acc + x))
 }
 
 console.log(days.reduce((acc, x) => acc + x));
