@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "d03": "node d03/d03.js",
-    "d04": "node d04/d04.js"
+    "d04": "node d04/d04.js",
+    "d06": "node d06/d06.js"
   },
   "author": "mvhou",
   "license": "ISC",
