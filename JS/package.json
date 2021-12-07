@@ -4,8 +4,7 @@
   "description": "Advent of Code 2021",
   "main": "index.js",
   "scripts": {
-    "day": "run(){ node d$1/d$1.js; }; run",
-    "d2u": "run(){ dos2unix ./d$1; }; run"
+    "day": "run(){ node d$1/d$1.js; }; run"
   },
   "author": "mvhou",
   "license": "ISC",
