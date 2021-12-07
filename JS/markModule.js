@@ -1,4 +1,4 @@
-const marrk = () => {
+const mark = () => {
 
     const char = (x) => (typeof x == 'number') ? String.fromCharCode(x) : '';
     const int = (c) => (typeof c == 'string') ? c.charCodeAt(0) : -1;
@@ -24,6 +24,10 @@ const marrk = () => {
 
     const product = (arr) => arr.reduce((acc, x) => acc * x, 1);
 
+    const sort = (arr) => arr.sort((a,b) => a - b);
+
+    const sortc = (arr) => arr.sort((a, b) => int(a) - int(b))
+
     const max = (arr) => arr.reduce((acc, x) => (acc > x) ? acc : x, arr[0]);
 
     const min = (arr) => arr.reduce((acc, x) => (acc < x) ? acc : x, arr[0]);
@@ -32,14 +36,22 @@ const marrk = () => {
 
     const countAll = (arr) => arr.reduce((acc,x) => {
         acc[x] = (acc[x] || 0) + 1;
-        return acc
-        ,{}
-    })
+        return acc;
+    },{});
 
-    const most = (arr) => {
-        const tempArr = countAll(arr);
-        return Object.keys(tempArr).reduce((a, b) => tempArr[a] > tempArr[b] ? a : b);
+    const mode = (arr) => arr.reduce((acc, x) => (count(arr, x) > count(arr, acc)) ? x : acc);
+
+    const least = (arr) => arr.reduce((acc, x) => (count(arr, x) < count(arr, acc)) ? x : acc);
+
+    const mean = (arr, round=true) => (round) ? Math.round(sum(arr) / arr.length) : sum(arr) / arr.length;
+
+    const median = (arr, round=true) => (round) ? sort(arr)[Math.floor((arr.length - 1) / 2)] : sort(arr)[Math.ceil((arr.length - 1) / 2)]
+
+    const log = (a, name='') => {
+      (name) ? console.log(name, a) : console.log(a);
+      return a;
     }
+
 
 
     return {
@@ -47,13 +59,20 @@ const marrk = () => {
         transpose,
         product,
         sum,
+        sort,
+        sortc,
         max,
         min,
         count,
-        most,
+        countAll,
+        mode,
+        median,
+        least,
+        mean,
         char,
-        int
+        int,
+        log
     }
 }
 
-export default marrk();
+export default mark();
